@@ -18,4 +18,15 @@ def day1(str):
         right.remove(minR)
     return total
 
-print(day1(str))
+
+def day1_2(str):
+    str = [s.split("   ") for s in str.split("\n")]
+    left = []
+    right = []
+    total = 0
+    for s in str:
+        left.append(int(s[0]))
+        right.append(int(s[1]))
+    for i in range(len(left)):
+        total += left[i] * right.count(left[i])
+    return total
